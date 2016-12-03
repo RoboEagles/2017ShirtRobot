@@ -44,9 +44,9 @@ public class driveTrain extends Subsystem {
     // here. Call these from Commands.
     public void drive() {
     	//this is a basic mecanum drive. it takes raw xy input
-    	final double x = Robot.oi.joystick.getRawAxis(1);
-    	final double y = Robot.oi.joystick.getRawAxis(2);
-    	Robot.robotDrive.mecanumDrive_Cartesian(x, y, rotation, gyroAngle);
+    	final double x = Robot.oi.joystick.getX();
+    	final double y = Robot.oi.joystick.getY();
+    	Robot.robotDrive.mecanumDrive_Cartesian(x, y, 0, 0);
     }
 
     public void initDefaultCommand() {
