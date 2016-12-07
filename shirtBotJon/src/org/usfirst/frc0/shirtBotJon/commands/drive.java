@@ -13,7 +13,6 @@ package org.usfirst.frc0.shirtBotJon.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc0.shirtBotJon.Robot;
-import org.usfirst.frc0.shirtBotJon.subsystems.driveTrain;
 
 /**
  *
@@ -49,7 +48,6 @@ public class drive extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	
         return false;
     }
 
@@ -62,6 +60,6 @@ public class drive extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.driveTrain.destroyEverything();
+    	end();
     }
 }
