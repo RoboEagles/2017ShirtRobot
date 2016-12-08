@@ -169,6 +169,28 @@ Children:
           value: '0'
       Base: Relay Solenoid
       Name: Relay Solenoid 1
+    - Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id005 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+            '23', '24', '25']
+          default: '0'
+          name: Input Channel (Digital)
+          validators: &id006 [DigitalChannel]
+          value: '0'
+      Base: Limit Switch
+      Name: upperLimitSwitch
+    - Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id005
+          default: '0'
+          name: Input Channel (Digital)
+          validators: *id006
+          value: '1'
+      Base: Limit Switch
+      Name: Limit Switch 2
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
@@ -199,7 +221,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id005 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+          choices: &id007 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
             '24', '25', '26', '27', '28', '29', '30', '31', '32']
           default: '1'
@@ -210,10 +232,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: &id006 [TypeDropdownSelected]
+          validators: &id008 [TypeDropdownSelected]
           value: shoot
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id007 [whileHeld, whenPressed, whenReleased]
+          choices: &id009 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
           name: When to Run
           validators: null
@@ -230,7 +252,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id005
+          choices: *id007
           default: '1'
           name: Button
           validators: null
@@ -239,10 +261,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id006
+          validators: *id008
           value: pressureToggle
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id007
+          choices: *id009
           default: whileHeld
           name: When to Run
           validators: null
@@ -259,7 +281,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id005
+          choices: *id007
           default: '1'
           name: Button
           validators: null
@@ -268,10 +290,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id006
+          validators: *id008
           value: pressureToggle
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id007
+          choices: *id009
           default: whileHeld
           name: When to Run
           validators: null
