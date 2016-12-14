@@ -48,7 +48,7 @@ public class RobotMap {
         driveTrainleftBack = new Talon(1);
         LiveWindow.addActuator("driveTrain", "leftBack", (Talon) driveTrainleftBack);
         
-        driveTrainrightFront = new Talon(2);
+        driveTrainrightFront = new Talon(9); //CHANGED THIS TO NUMBER 9 BECAUSE WE CANT MOVE WIRES
         LiveWindow.addActuator("driveTrain", "rightFront", (Talon) driveTrainrightFront);
         
         driveTrainrightBack = new Talon(3);

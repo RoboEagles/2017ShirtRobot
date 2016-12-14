@@ -47,9 +47,11 @@ public class driveTrain extends Subsystem {
     	final double x = Robot.oi.joystick.getX();
     	final double y = Robot.oi.joystick.getY();
     	final double z = Robot.oi.joystick.getZ();
-    	Robot.robotDrive.mecanumDrive_Cartesian(x, y, z, 0);
+    	// rightFront.set(y);
+    	Robot.robotDrive.mecanumDrive_Cartesian(x, y, z, 0); //COMMENTED OUT THE MECANUM DRIVE 
     }
     public void stop(){
+    	rightFront.stopMotor();
     	Robot.robotDrive.mecanumDrive_Cartesian(0,0,0,0);
     }
     public void destroyEverything() {
@@ -63,6 +65,7 @@ public class driveTrain extends Subsystem {
 
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new drive());
     }
     
 }
